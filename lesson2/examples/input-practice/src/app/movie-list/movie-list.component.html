@@ -4,5 +4,9 @@
        <li *ngFor ="let movie of movies">{{movie}}</li>
     </ol>
     <hr>
-
+    <input #newMovie (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''" type='text' placeholder="Enter Movie Title Here"/>
+    <button (click)="addMovie(newMovie.value); newMovie.value = ''" >Add</button>
+    <!-- <p *ngIf = "addMovie() !== true">Please Enter Movie Name (No Duplicates)</p> 
+   Use *ngIf to display an error message if the user does not enter a title or submits a title that is already on the list.
+   -->
  </div>
